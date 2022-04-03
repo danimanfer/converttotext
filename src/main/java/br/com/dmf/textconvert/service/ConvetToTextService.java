@@ -46,7 +46,7 @@ public class ConvetToTextService {
 
 		System.out.println(tessdata);
 		ITesseract tesseract = new Tesseract();
-		tesseract.setDatapath(tessdata);
+//		tesseract.setDatapath(tessdata);
 
 		tesseract.setLanguage("por");
 		tesseract.setPageSegMode(1);
