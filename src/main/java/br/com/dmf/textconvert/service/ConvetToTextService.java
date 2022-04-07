@@ -14,7 +14,7 @@ public class ConvetToTextService {
 	public String gerararquivo(String arquivo, String diretorio) {
 
 //		String dirUser = System.getProperty("user.dir");
-
+//		String tessdata = "/usr/share/tesseract-ocr/4.00/tessdata"; //linux local
 //		String tessdata = dirUser + "/tessdata";
 		String tessdata = "/.apt/usr/share/tesseract-ocr/4.00/tessdata";
 		
@@ -46,7 +46,7 @@ public class ConvetToTextService {
 
 		System.out.println(tessdata);
 		ITesseract tesseract = new Tesseract();
-//		tesseract.setDatapath(tessdata);
+		tesseract.setDatapath(tessdata);
 
 		tesseract.setLanguage("por");
 		tesseract.setPageSegMode(1);
