@@ -16,7 +16,7 @@ public class ConvetToTextService {
 //		String dirUser = System.getProperty("user.dir");
 //		String tessdata = "/usr/share/tesseract-ocr/4.00/tessdata"; //linux local
 //		String tessdata = dirUser + "/tessdata";
-		String tessdata = "/.apt/usr/share/tesseract-ocr/4.00/tessdata";
+		String tessdata = "/app/.apt/usr/share/tesseract-ocr/4.00/tessdata";
 		
 //		System.setProperty("jna.library.path", "/.apt/usr/lib/x86_64-linux-gnu/");
 		
