@@ -1,1 +1,1 @@
-web java -Dserver.port=$PORT $JAVA_OPTS -Djna.platform.library.path=/.apt/usr/lib/x86_64-linux-gnu/ -jar target/converttotext-0.0.1.jar
+web java -Dserver.port=$PORT $JAVA_OPTS -Djna.platform.library.path=/.apt/usr/lib/x86_64-linux-gnu -jar target/converttotext-0.0.1.jar
