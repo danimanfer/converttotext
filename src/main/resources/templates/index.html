@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>Upload File to Convert to .txt</h2>
-                <p>Files supported: BMP, PNM, PNG, JFIF, JPEG, PDF and TIFF.</p>
+                <p>Files supported: PNG, JPEG.</p>
                 <p th:text="${message}" th:if="${message ne null}" class="alert alert-primary"></p>
                 <form method="post" th:action="@{/upload}" enctype="multipart/form-data">
                     <div class="form-group">
