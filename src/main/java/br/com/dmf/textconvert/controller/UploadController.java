@@ -72,8 +72,10 @@ public class UploadController {
 			Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
 			fileResponse = convertTextService.gerararquivo(path.toString(), tempDir.toString());
 
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
+			Files.walk(tempDir).sorted(Comparator.reverseOrder()).map(Path::toFile).forEach(File::delete);
+			throw e;
 		}
 
 		// return success response
@@ -98,18 +100,18 @@ public class UploadController {
 			return ResponseEntity.ok().header(headerKey, headerValue).contentLength(fileResponse.length())
 					.contentType(MediaType.TEXT_PLAIN).body(resource);
 
-		} catch (IOException e) {
-			e.printStackTrace();
-
+	
 		} catch (Exception e) {
 			e.printStackTrace();
+			Files.walk(tempDir).sorted(Comparator.reverseOrder()).map(Path::toFile).forEach(File::delete);
+			throw e;
 
 		} finally {
 			if(targetStream!= null)
 			targetStream.close();
 		}
 
-		return ResponseEntity.badRequest().build();
+//		return ResponseEntity.badRequest().build();
 	}
 
 }
